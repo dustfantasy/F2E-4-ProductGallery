@@ -1,0 +1,22 @@
+{
+  "name": "f2e-4-productgallery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustfantasy/F2E-4-ProductGallery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dustfantasy/F2E-4-ProductGallery/issues"
+  },
+  "homepage": "https://github.com/dustfantasy/F2E-4-ProductGallery#readme",
+  "dependencies": {
+    "sass": "^1.8.0"
+  }
+}

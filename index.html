@@ -5,10 +5,152 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="main.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="./src/css/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
 </head>
 <body>
-  AAA
+  <div id="page">
+    <div id="page1">
+      <header class="title1">
+        <div class="arrow"></div>
+        <div class="cloth">ccclothes</div>
+        <div class="top">MEN'S TOPS</div>
+      </header>
+      <div class="one">
+          <div name="LINEN BLAZER" class="name">LINEN BLAZER</div>
+          <div class="box border"></div>
+          <div class="rectangle-4-4 img"></div>
+          <div class="rectangle-2-1 pattern"></div>
+          <div class="count">01</div>
+          <div class="species">Men’s outfit</div>
+        </div>
+        <div class="two">
+          <div name="FREELIFT" class="name">FREELIFT</div>
+          <div class="box border"></div>
+          <div class="box full"></div>
+          <div class="box img"></div>
+          <div class="count">02</div>
+          <div class="species">Men’s basics</div>
+        </div>
+        <div class="three">
+          <div name="SUPER SKINNY" class="name">SUPER SKINNY</div>
+          <div class="box border"></div>
+          <div class="box full"></div>
+          <div class="rectangle-4-2 img"></div>
+          <div class="count">03</div>
+          <div class="species">Men’s pattern shirts</div>
+        </div>
+        <div class="four">
+          <div name="DENIM" class="name">DENIM</div>
+          <div class="box border"></div>
+          <div class="rectangle-2-4 img"></div>
+          <div class="rectangle-2-1 pattern"></div>
+          <div class="count">04</div>
+          <div class="species">Men’s cadual</div>
+        </div>
+        <div class="five">
+          <div name="SWEATSHIRTS" class="name">SWEATSHIRTS</div>
+          <div class="rectangle-2-1 border"></div>
+          <div class="box img"></div>
+          <div class="rectangle-2-1 pattern"></div>
+          <div class="count">05</div>
+          <div class="species">Men’s jacket</div>
+        </div>
+        <div class="six" onclick="changePage()">
+          <div name="VINTAGE DENIM" class="name">VINTAGE DENIM</div>
+          <div class="rectangle-4-2 border"></div>
+          <div class="rectangle-4-4 img"></div>
+          <div class="box full"></div>
+          <div class="count">06</div>
+          <div class="species">Men’s classic</div>
+        </div>
+        <div class="seven">
+          <div name="EDITION" class="name">EDITION</div>
+          <div class="rectangle-2-4 border"></div>
+          <div class="rectangle-2-4 img"></div>
+          <div class="box full"></div>
+          <div class="count">07</div>
+          <div class="species">Men’s shirts</div>
+        </div>
+    </div>
+    <div id="page2">
+      <header class="title2" onclick="changePage()">
+        <div class="arrow"></div>
+        <div class="cloth">ccclothes</div>
+      </header>
+      <div class="article-header">
+        <div class="count first-name">VINTAGE</div>
+        <div class="count last-name">DENIM</div>
+        <div class="count top">TOP</div>
+        <div class="rectangle-4-2 border"></div>
+        <div class="rectangle-6-4 img"></div>
+        <div class="box full"></div>
+        <div class="count number">06</div>
+      </div>
+      <div class="article-content">
+        <div class="aside">PRODUCT DETAILS</div>
+        <div class="title">
+          <div class="count">VINTAGE DENIM</div>
+          <div>Kogi Cosby sweater ethical squid irony</div>
+        </div>
+        <div class="content">
+            In the tumultuous business of cutting-in and attending to a whale, there is much running backwards and forwards among the crew. Now hands are wanted here, and then again hands are wanted there. There is no staying in any one place; for at one and the same time everything has to be done everywhere. It is much the same with him who endeavors the description of the scene. 
+
+            We must now retrace our way a little. It was mentioned that upon first breaking ground in the whale's back, the blubber-hook was inserted into the original hole there cut by the spades of the mates. But how did so clumsy and weighty a mass as that same hook get fixed in that hole? It was inserted there by my particular friend Queequeg, whose duty it was, as harpooneer.
+        </div>
+      </div>
+      <div class="article-footer">
+        <div class="box full"></div>
+        <div class="rectangle-4-2 border"></div>
+        <div class="rectangle-4-4 img"></div>
+        <div class="rectangle-3-3 img"></div>
+        <div class="rectangle-2-1 pattern"></div>
+      </div>
+    </div>
+  </div>
 </body>
+<script>
+  let page = 1
+  let transitionend = true
+  let scrollX
+  let scrollY
+  function changePage () {
+    transitionend = false
+    let all = document.querySelectorAll('header, .name,.border,.full,.pattern,.count,.species,.img,.article-content')
+    Object.keys(all).forEach(function(key) {
+      var el = all[key]
+      el.style.transition = 'all 0.5s'
+      el.className += ' disappear'
+      el.addEventListener('transitionend', function () {
+        if(transitionend) return
+          transitionend = true
+          let page1 = document.getElementById('page1')
+          let page2 = document.getElementById('page2')
+          
+          page2.scrollTop
+          if(page === 1) {
+            page1.style.display = 'none'
+            page2.style.display = 'grid'
+            page = 2
+            scrollX = window.scrollX
+            scrollY = window.scrollY
+            window.scrollTo(0, 0)
+          }
+          else {
+            page1.style.display = 'grid'
+            page2.style.display = 'none'
+            page = 1
+            window.scrollTo(scrollX, scrollY)
+          }
+          Object.keys(all).forEach(function(key) {
+            var el = all[key]
+            el.style.transition = 'all 0.5s'
+            el.classList.remove('disappear')
+          });
+      })
+    });
+  }
+</script>
 </html>
